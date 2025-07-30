@@ -1,5 +1,12 @@
+# Configuração para a Netlify
+# Este arquivo garante que o build seja feito corretamente.
+
 [build]
+  # Comando para construir o site. Ele executa o script definido no package.json
   command = "npm run build"
-  publish = "."
+  
+  # A pasta que será publicada. Nosso script de build cria a pasta 'dist'.
+  publish = "dist"
+  
+  # A pasta onde as Netlify Functions estão localizadas.
   functions = "netlify/functions"
-  framework = "#static"

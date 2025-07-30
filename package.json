@@ -1,14 +1,18 @@
 {
     "name": "psiconcurso-tutor",
-    "version": "1.0.0",
+    "version": "1.1.0",
+    "type": "module",
     "description": "Plataforma de estudos para concursos de psicologia",
     "scripts": {
-        "build": "esbuild index.tsx --bundle --outfile=bundle.js --jsx=automatic --define:process.env.NODE_ENV='\"production\"'"
+        "build": "node build.js"
     },
     "dependencies": {
         "@google/genai": "^0.12.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "esbuild": "0.23.0"
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "esbuild": "0.23.0",
+        "fs-extra": "^11.2.0"
     }
 }
