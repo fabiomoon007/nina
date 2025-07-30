@@ -1,0 +1,8 @@
+{
+  "name": "psiconcurso-tutor",
+  "version": "1.0.0",
+  "description": "Study platform for psychology contests",
+  "dependencies": {
+    "@google/genai": "^0.12.0"
+  }
+}
