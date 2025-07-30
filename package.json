@@ -2,7 +2,13 @@
   "name": "psiconcurso-tutor",
   "version": "1.0.0",
   "description": "Study platform for psychology contests",
+  "scripts": {
+    "build": "esbuild index.tsx --bundle --outfile=dist/bundle.js --jsx=automatic --define:process.env.NODE_ENV='\"production\"'"
+  },
   "dependencies": {
-    "@google/genai": "^0.12.0"
+    "@google/genai": "^0.12.0",
+    "esbuild": "0.23.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
