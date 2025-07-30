@@ -4,9 +4,10 @@ import type { Question } from '../types';
 interface QuizProps {
   questions: Question[];
   onFinish: (answers: Record<string, string>) => void;
+  onCancel: () => void;
 }
 
-export const Quiz: React.FC<QuizProps> = ({ questions, onFinish }) => {
+export const Quiz: React.FC<QuizProps> = ({ questions, onFinish, onCancel }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<Record<string, string>>({});
     const progress = (currentQuestionIndex / questions.length) * 100;
@@ -24,8 +25,9 @@ export const Quiz: React.FC<QuizProps> = ({ questions, onFinish }) => {
 
     return (
         <div className="quiz-container">
-            <header className="header">
+            <header className="header quiz-header">
                  <h1 className="header-title">Simulado em Andamento</h1>
+                 <button onClick={onCancel} className="cancel-button">Cancelar Simulado</button>
             </header>
             <div className="progress-bar-container">
                 <div className="progress-bar" style={{ width: `${progress}%` }}></div>

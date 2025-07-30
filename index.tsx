@@ -88,6 +88,11 @@ const App = () => {
         setView('quizResult');
     };
 
+    const handleCancelQuiz = () => {
+        setQuizQuestions([]);
+        setView('dashboard');
+    };
+
     const handleBackToStart = () => {
         setQuizResult(null);
         setQuizQuestions([]);
@@ -103,7 +108,7 @@ const App = () => {
 
         switch (view) {
             case 'quiz':
-                return <Quiz questions={quizQuestions} onFinish={handleFinishQuiz} />;
+                return <Quiz questions={quizQuestions} onFinish={handleFinishQuiz} onCancel={handleCancelQuiz} />;
             case 'quizResult':
                 return quizResult && <QuizResult result={quizResult} backToStart={handleBackToStart} />;
             case 'editalDegase':

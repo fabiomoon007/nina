@@ -18,7 +18,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, openQuiz
 
     const sidebarContent = (
         <>
-            <h1 className="sidebar-title">PsiConcurso</h1>
+            <div className="sidebar-header">
+                <h1 className="sidebar-title">Nininha vai passar!</h1>
+                <div className="pet-icons">
+                    <span>🐶</span>
+                    <span>🐱</span>
+                </div>
+            </div>
             <nav className="sidebar-nav">
                 {navItems.map(item => (
                     <a key={item.view}

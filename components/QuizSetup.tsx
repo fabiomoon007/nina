@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { Question } from '../types';
 import { Modal } from './Modal';
 
@@ -21,6 +21,20 @@ export const QuizSetup: React.FC<QuizSetupProps> = ({ questions, startQuiz, isOp
         const tags = [...new Set(questions.flatMap(q => q.tags || []))].filter(Boolean).sort();
         return { bancas, anos, tags };
     }, [questions]);
+
+    const resetFilters = () => {
+        setNumQuestions(10);
+        setSelectedBanca('all');
+        setSelectedAno('all');
+        setSelectedTags([]);
+    };
+
+    useEffect(() => {
+        if (!isOpen) {
+            // Reset filters when modal closes to ensure a clean state for the next quiz
+            resetFilters();
+        }
+    }, [isOpen]);
 
     const handleStart = () => {
         let filtered = [...questions];
