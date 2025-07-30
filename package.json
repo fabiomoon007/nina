@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Study platform for psychology contests",
   "scripts": {
-    "build": "esbuild index.tsx --bundle --outfile=dist/bundle.js --jsx=automatic --define:process.env.NODE_ENV='\"production\"'"
+    "build": "esbuild index.tsx --bundle --outfile=bundle.js --jsx=automatic --define:process.env.NODE_ENV='\"production\"'"
   },
   "dependencies": {
     "@google/genai": "^0.12.0",
